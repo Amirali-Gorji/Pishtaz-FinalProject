@@ -25,3 +25,4 @@ CREATE DATABASE fpdb;
 How to start up the program:
 #run with sudo 
 
+gcc -Wall -Wextra -I "/usr/include/postgresql" -L "/usr/lib/postgresql" workWithData.c -lpq -o work
