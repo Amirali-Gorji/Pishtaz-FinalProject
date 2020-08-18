@@ -24,9 +24,9 @@ sudo -u postgres psql postgres \
 to loggin as postgres role \
 after that enter : \
 alter user finalp with password '12345678' \
-in order to set password to 12345678
+in order to set password to 12345678 \
 it's possible that this role hasn't login permition \
-to make it possibel for finalp enter: \
+to make it possible for finalp enter: \
 alter role finalp with login;
 
 5-Create fpdb Database:\
