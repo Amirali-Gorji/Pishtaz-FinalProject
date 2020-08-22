@@ -35,6 +35,9 @@ sudo -u postgres createdb fpdb --owner finalp
 
 
 How to start up the program:
-#run with sudo 
+give run.sh excution ability wiht: \
+chmod +x run.sh \
+and then run it : \
+./run.sh
 
-gcc -Wall -Wextra -I "/usr/include/postgresql" -L "/usr/lib/postgresql" workWithData.c -lpq -o work
+
