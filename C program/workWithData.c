@@ -57,6 +57,28 @@ int main() {
                 char str[500];
                 //fill str array with lines of text file
                 fgets(str,500,fileName);
+                
+                
+                
+                //to split a string
+                //Extract the first token
+                char * token = strtok(str, ",");
+                //loop through the string to extract all other tokens
+                
+                    char info[8][20];
+                    int i = 0;
+                    while( token != NULL ) {
+                        
+                        char tmp[20];
+                        sprintf(tmp,u8"%s",token);
+                        //asign it to array
+                        strcpy(info[i],tmp);
+                        printf(u8"%s\n", tmp ); //printing each token
+                        token = strtok(NULL , ",");
+                        i++;
+                        
+                    }
+
                 }
               }
             }
