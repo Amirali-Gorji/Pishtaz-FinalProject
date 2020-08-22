@@ -7,3 +7,5 @@ gcc -Wall -Wextra -I "/usr/include/postgresql" -L "/usr/lib/postgresql" ./Cprogr
 sudo ./Cprogram/work
 
 rm *.text
+#sleep for 30 minutes
+sleep 1800
