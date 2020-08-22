@@ -78,6 +78,19 @@ int main() {
                         i++;
                         
                     }
+                    //creating commad to INSERT informations
+                    char command[500];
+                    sprintf(command,"INSERT INTO fp_stores_data (time,provice,city,market_id,product_id,price,quantity,has_sold) VALUES (%s,%s,%s,%s,%s,%s,%s,%s);" ,
+                                                info[0],info[1],
+                                                info[2],info[3],
+                                                info[4],info[5],
+                                                info[6],info[7]);
+
+
+
+
+                    //executing command
+                    res = PQexec(conn,command);
 
                 }
               }
