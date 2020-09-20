@@ -35,7 +35,7 @@ sudo -u postgres createdb fpdb --owner finalp
 
 
 How to start up the program:
-give run.sh excution ability wiht: \
+give run.sh excution ability with: \
 chmod +x run.sh \
 and then run it : \
 ./run.sh
