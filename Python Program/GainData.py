@@ -10,8 +10,8 @@ conn = psycopg2.connect(user = "finalp",
                         database = "fpdb")
 
 cur = conn.cursor()
-
-cur.execute("SELECT * FROM fp_stores_data;")
+select = "SELECT * FROM fp_stores_data;"
+cur.execute(select)
 
 result = cur.fetchall()
 
@@ -131,3 +131,9 @@ for provice in mapTWO:
                 price = (((mapTWO[provice])[city])[id])[1]
         print(f'\tIn {provice} , {city}\n\t\tmost popular product is : {tmpID}\n\t\twhich sold {max} number of items\n\t\ttotal profit is : {price*max}')
             
+
+
+
+
+clearRow = "DELETE FROM fp_stores_data;"
+cur.execute(clearRow)
