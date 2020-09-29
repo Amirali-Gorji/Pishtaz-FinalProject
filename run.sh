@@ -2,24 +2,26 @@
 
 
 
-echo "welcome to FinalProject\n"
+echo "welcome to FinalProject"
+echo "Preparing Please wait..."
+sudo pip3 install psycopg2
+OUTPUT=$(pwd)
+chmod +x ${OUTPUT}/Script/downloadData.sh
+chmod +x ${OUTPUT}/Script/program.sh
 
-chmod +x ./Script/downloadData.sh
-
+sudo mkdir -p /tmp/final_project
 echo "executing prerequired C file:"
 
-cd ./Cprogram
+gcc -Wall -Wextra -I "/usr/include/postgresql" -L "/usr/lib/postgresql" ${OUTPUT}/Cprogram/preExe.c -lpq -o ${OUTPUT}/Cprogram/pre.out
+sudo ${OUTPUT}/Cprogram/pre.out
 
-gcc -Wall -Wextra -I "/usr/include/postgresql" -L "/usr/lib/postgresql" preExe.c -lpq -o ./pre.out
-
-sudo ./pre.out
 
 
 echo "Executing for the first time\n"
 
-./Script/program.sh
+sudo ${OUTPUT}/Script/program.sh
 
-OUTPUT=$(pwd)
+
 
 echo "*/30 * * * * ${OUTPUT}/Script/program.sh" | crontab -
 

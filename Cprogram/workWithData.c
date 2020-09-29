@@ -20,12 +20,12 @@ int main() {
     DIR* directory = opendir("/tmp/final_project/");
     struct dirent *d;
     //open the directory
-    int j = 0;
+    //int j = 0;
     while((d = readdir(directory)) != NULL){
        
-       if(j == 1){
-        break;
-       }
+       //if(j == 1){
+       // break;
+      // }
 	    //if this was report file then go in bracket
         if(strstr(d->d_name,"report-") != NULL){
 
@@ -40,7 +40,7 @@ int main() {
             int tmp = 0;
             char city[25] = "یهجایی";
             int toInsertCity[] = {1234,0,0};
-            //toInsertMarket = [1234,""]
+            
             while(!feof(fileName)){
                 char str[500];
                 //fill str array with lines of text file
@@ -84,8 +84,7 @@ int main() {
                                                 toIn[2]);
 
 
-                    printf("----------------------------------------\n");
-                    printf("command is : %s",command);
+                    
                     PGresult *res = PQexec(conn,command);
                     //store this line in ram
                     sprintf(city,"%s",info[2]);
@@ -97,17 +96,14 @@ int main() {
 
                 //aggregation data
                 else{
-                    //printf("Fatemeh[PBUH]");
+                    
                     //atol will convert string to int
                     //time
                     toInsertCity[0] = atol(info[0]);
-
-                    
                     //city
                     sprintf(city,"%s",info[2]);
                     //has_sold
                     toInsertCity[1] = toInsertCity[1] + atol(info[3]);
-                    
                     //quantity
                     toInsertCity[2] = toInsertCity[2] + atol(info[4]);
                 }
@@ -122,17 +118,16 @@ int main() {
                                             info[6],info[7]);
 
 
-                    // printf("----------------------------------\n");
-                    // printf("command is : %s",command);
+                    
 
                     PGresult *res = PQexec(conn,command);
-                    tmp++;
-                    if(tmp == 1500)
-                        break;
+                    //tmp++;
+                    //if(tmp == 1500)
+                       // break;
 
             }
         }
-        j++;
+        //j++;
     } 
     return 0;
 }

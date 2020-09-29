@@ -1,17 +1,19 @@
 #! /bin/bash
+
+OUTPUT=$(pwd)
 echo "downloading DataFiles\n"
-./Script/downloadData.sh
+${OUTPUT}/Script/downloadData.sh
 
 echo "Adding DataFiles to Database..."
 #sleep to let user see something
-sleep 2
+#sleep 2
 
-cd ./Cprogram
 
-gcc -Wall -Wextra -I "/usr/include/postgresql" -L "/usr/lib/postgresql" workWithData.c -lpq -o ./work.out
+gcc -Wall -Wextra -I "/usr/include/postgresql" -L "/usr/lib/postgresql" ./Cprogram/workWithData.c -lpq -o ./Cprogram/work.out
 
-sudo ./work.out
+sudo ./Cprogram/work.out
 
-python3 ../PythonProgram/GainData.py
- 
+python3 ./PythonProgram/GainData.py > ./result.txt
+
+
 sudo rm /tmp/final_project/*.text
