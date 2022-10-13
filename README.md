@@ -1,4 +1,4 @@
-# FinalProject
+# Pishtaz-FinalProject
 What is needed to be installed:\
 1-wget 
 make sure to install wget package in linux\
